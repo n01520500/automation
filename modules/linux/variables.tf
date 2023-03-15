@@ -1,5 +1,3 @@
-
-
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the resource."
@@ -11,8 +9,6 @@ variable "tags" {
   }
 }
 
-
-
 variable "resource_group_name" {
   type    = string
   default = "N01520500-assignment1-RG"
@@ -21,7 +17,6 @@ variable "resource_group_name" {
 variable "location" {
 	default = "eastus" 
 }
-
 
 variable "vnet_name" {
   type    = string
