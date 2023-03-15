@@ -12,14 +12,13 @@ variable "db_storage_mb" {
 }
 
 variable "db_admin_username" {
-  description = "Username for the admin account"
+  description = "Username for admin account"
 }
 
 variable "db_admin_password" {
-  description = "Password for the admin account"
+  description = "Password for admin account"
 }
 
 variable "resource_group_name"{}
-
 variable "location"{}
 variable "prefix"{}
