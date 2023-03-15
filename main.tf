@@ -20,8 +20,8 @@ module "common" {
   tags                = var.tags
 }
 
-module "linux" {
-  source   = "./modules/linux"
+module "vmlinux" {
+  source   = "./modules/vmlinux"
   vm_count = 2
   vm_size  = "Standard_B1s"
   ssh_user = "centos"
@@ -62,7 +62,7 @@ module "datadisk" {
   subnet_id           = module.network.subnet_id
   vm_count            = 3
   tags                = var.tags
-  linux_vm_ids        = module.linux.vm_ids
+  linux_vm_ids        = module.vmlinux.vm_ids
   vmwindows_vm_id     = module.vm_windows.vm_id
 }
 
@@ -71,7 +71,7 @@ module "loadbalancer" {
   source              = "./modules/loadbalancer"
    resource_group_name = "N01520500-assignment1-RG"
   location            = "eastus"
-linux_vm_ids = module.linux.vm_ids
+linux_vm_ids = module.vmlinux.vm_ids
 
 }
 
