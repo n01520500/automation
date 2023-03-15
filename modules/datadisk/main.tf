@@ -1,6 +1,3 @@
-# datadisk/main.tf
-
-# Create the managed disks
 resource "azurerm_managed_disk" "data_disk" {
   count         = 3
   name          = "datadisk-${count.index}"
@@ -11,7 +8,6 @@ resource "azurerm_managed_disk" "data_disk" {
   disk_size_gb  = 10
 }
 
-# Attach disks to the Linux VMs
 resource "azurerm_virtual_machine_data_disk_attachment" "data_disk_linux" {
   count          = 2
   managed_disk_id = element(azurerm_managed_disk.data_disk.*.id, count.index)
@@ -20,7 +16,6 @@ resource "azurerm_virtual_machine_data_disk_attachment" "data_disk_linux" {
   caching           = "None"
 }
 
-# Attach disks to the Windows VM
 resource "azurerm_virtual_machine_data_disk_attachment" "data_disk_windows" {
   managed_disk_id = azurerm_managed_disk.data_disk[2].id
   virtual_machine_id = var.vmwindows_vm_id
