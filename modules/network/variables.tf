@@ -8,13 +8,11 @@ variable "location" {
 }
 
 variable "subnet_name" {
-  description = "Name of the subnet."
   default = "subnet1"
 }
 
 variable "tags" {
   type = map(string)
-  description = "A mapping of tags to assign to the resource."
   default = {
     Project = "Automation Project – Assignment 1"
     Name = "kavya.sharma"
@@ -32,7 +30,6 @@ variable "address_space" {
 }
 
 variable "subnet_address_prefix" {
-  description = "CIDR block for the subnet."
   default = "10.0.1.0/24"
 }
 
