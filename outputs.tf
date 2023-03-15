@@ -22,21 +22,20 @@ output "storage_account_name" {
   value = module.common.storage_account_name
 }
 
-
 output "vm_hostnames" {
-  value = module.linux.vm_hostnames
+  value = module.vmlinux.vm_hostnames
 }
 
 output "vm_domains" {
-  value = module.linux.vm_domain_names
+  value = module.vmlinux.vm_domain_names
 }
 
 output "vm_private_ips" {
-  value = module.linux.vm_private_ips
+  value = module.vmlinux.vm_private_ips
 }
 
 output "vm_public_ips" {
-  value = module.linux.vm_public_ips
+  value = module.vmlinux.vm_public_ips
 }
 
 output "vm_windows_hostname" {
@@ -53,15 +52,13 @@ output "vm_windows_public_ip" {
 }
 
 output "linux_vm_ids" {
-  value = module.linux.vm_ids
+  value = module.vmlinux.vm_ids
 }
 
 output "vmwindows_vm_id" {
   value = module.vm_windows.vm_id
 }
 
-
-# Use the output of the load balancer module
 output "load_balancer_name" {
   value = module.loadbalancer.lb_name
 }
