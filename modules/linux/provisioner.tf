@@ -1,5 +1,5 @@
-resource "null_resource" "hello_world" {
+resource "null_resource" "hostnamectl" {
   provisioner "local-exec" {
-    command = "echo 'Hello World'"
+    command = "echo 'hostanamectl'"
   }
 }
