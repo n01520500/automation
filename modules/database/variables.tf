@@ -1,5 +1,3 @@
-# modules/database/main.tf
-
 variable "db_name" {
   description = "Name of the Azure DB for PostgreSQL instance"
 }
